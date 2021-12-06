@@ -6,6 +6,7 @@ import SignUpPage from "./components/signup-page/SignUpPage";
 import axios from "axios";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Profile from "./pages/profile/Profile";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,8 @@ class App extends React.Component {
   }
 
   authListener() {
-    axios.get("http://localhost:3000/jiitkontakt/auth/login.php")
+    axios
+      .get("http://localhost:3000/jiitkontakt/auth/login.php")
       .then((res) => {
         if (res.data.auth === true) {
           this.setState({
@@ -38,17 +40,15 @@ class App extends React.Component {
       });
   }
 
-
   render() {
-
     return (
       <>
         <div>
           <Router>
             <Switch>
               <Route path="/sign-up" component={SignUpPage} />
-              <Route path="/login" component={Login_Page} /> 
-              <Route path="/" component={Home} /> 
+              <Route path="/login" component={Login_Page} />
+              <Route path="/" component={Home} />
             </Switch>
           </Router>
         </div>
