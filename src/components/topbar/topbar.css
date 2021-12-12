@@ -103,3 +103,10 @@
   object-fit: cover;
   
 }
+
+.topbarLogout {
+  cursor: pointer;
+  font-size: 14px;
+  
+
+}
